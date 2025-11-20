@@ -8,19 +8,19 @@ export default function Navbar() {
   const closeMenu = () => setMobileOpen(false);
 
   return (
-    <nav className="text-white w-full bg-blue-950 shadow px-6 py-3 sticky top-0 z-50 m-1 rounded-md border">
-      <div className="text-black container mx-auto flex items-center justify-between">
-        {/* Left side Logo */}
+    <nav className="w-full bg-blue-900 shadow px-6 py-3 sticky top-0 z-50">
+      <div className="container mx-auto flex items-center justify-between">
+        {/* Logo */}
         <Logo />
 
-        {/* Desktop menu */}
+        {/* Desktop */}
         <div className="hidden md:flex space-x-6 items-center">
           <NavLinks closeMenu={closeMenu} />
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile */}
         <button
-          className="md:hidden text-blue-900"
+          className="md:hidden text-white"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -38,9 +38,8 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-black shadow-lg py-4 px-6 flex flex-col space-y-4">
+        <div className="md:hidden bg-blue-950 shadow-lg py-4 px-6 flex flex-col space-y-4">
           <NavLinks closeMenu={closeMenu} />
         </div>
       )}

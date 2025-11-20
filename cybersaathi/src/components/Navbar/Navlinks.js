@@ -16,7 +16,7 @@ export default function NavLinks({ closeMenu }) {
         <Link
           key={name}
           href={href}
-          className="text-white hover:text-blue-700 text-lg"
+          className="text-white hover:text-yellow-300 text-lg transition"
           onClick={closeMenu}
         >
           {name}
