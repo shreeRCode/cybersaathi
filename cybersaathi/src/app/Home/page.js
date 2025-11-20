@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 export default function HomePage() {
   const pathname = usePathname();
 
-  const navLinks = [
+  const links = [
     { name: "Home", href: "/Home" },
     { name: "Quiz", href: "/Quiz" },
     { name: "Article", href: "/Article/article" },
@@ -16,76 +16,51 @@ export default function HomePage() {
   ];
 
   return (
-    <div>
-      {/* NAVBAR EXACTLY LIKE ARTICLE PAGE */}
-      <nav
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "1rem 2rem",
-          borderBottom: "1px solid #ddd",
-        }}
-      >
-        <div style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
-          Cyber Saathi
-        </div>
+    <div className="min-h-screen bg-gray-50">
+      {/* 🔵 SAME NAVBAR AS YOUR SCREENSHOT */}
+      <nav className="w-full bg-[#0A2657] text-white shadow-md">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-10 py-4">
+          {/* Logo */}
+          <h1 className="text-3xl font-extrabold tracking-wide">CyberSaathi</h1>
 
-        <div style={{ display: "flex", gap: "1.5rem" }}>
-          {navLinks.map(({ name, href }) => (
-            <Link
-              key={href}
-              href={href}
-              style={{
-                textDecoration: pathname === href ? "underline" : "none",
-                color: pathname === href ? "blue" : "black",
-                fontWeight: "500",
-              }}
-            >
-              {name}
-            </Link>
-          ))}
+          {/* Navlinks */}
+          <div className="flex space-x-10 text-lg font-medium">
+            {links.map(({ name, href }) => (
+              <div key={href} className="relative">
+                <Link
+                  href={href}
+                  className={`${
+                    pathname === href ? "font-bold" : "opacity-80"
+                  } hover:opacity-100 transition`}
+                >
+                  {name}
+                </Link>
+
+                {/* Active underline */}
+                {pathname === href && (
+                  <span className="absolute left-0 right-0 -bottom-1 mx-auto w-8 h-[3px] rounded-full bg-white"></span>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </nav>
 
-      {/* HOME PAGE CONTENT */}
-      <div
-        style={{
-          margin: "3rem auto",
-          maxWidth: "800px",
-          padding: "0 1rem",
-        }}
-      >
-        <h1
-          style={{
-            fontSize: "2rem",
-            fontWeight: "bold",
-            marginBottom: "1.5rem",
-          }}
-        >
+      {/* CONTENT AREA */}
+      <div className="max-w-4xl mx-auto pt-20 px-6">
+        <h1 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
           Protect Your Digital Life
         </h1>
 
-        <p
-          style={{
-            fontSize: "1.1rem",
-            lineHeight: "1.6",
-            marginBottom: "1.5rem",
-          }}
-        >
-          Cybersecurity is everyone&apos;s responsibility. Stay vigilant against
+        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+          Cybersecurity is everyone&#39;s responsibility. Stay vigilant against
           phishing scams, data breaches, and online threats. Awareness and early
-          action are your strongest defenses in today&apos;s connected world.
+          action are your strongest defenses in today&#39;s connected world.
         </p>
 
         <Link
           href="/Article/article"
-          style={{
-            fontSize: "1.1rem",
-            color: "blue",
-            textDecoration: "underline",
-            cursor: "pointer",
-          }}
+          className="text-blue-700 font-semibold text-lg hover:underline"
         >
           Learn More →
         </Link>
