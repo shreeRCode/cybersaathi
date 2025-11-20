@@ -1,31 +1,86 @@
-import Navbar from "@/components/Navbar/Navbar";
-
 export default function HomePage() {
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: "Home", href: "/Home" },
+    { name: "Quiz", href: "/Quiz" },
+    { name: "Article", href: "/Article/article" },
+    { name: "About", href: "/About/about" },
+    { name: "Community", href: "/Community/community" },
+    { name: "Profile", href: "/Profile/profile" },
+  ];
+
   return (
-    <div className="overflow-hidden bg-gradient-to-b from-blue-50 to-white min-h-screen">
-      <Navbar />
-
-      <section className="pt-24 px-6 pb-16 flex items-center justify-center">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-6">
-            Protect Your Digital Life
-          </h1>
-
-          <p className="text-gray-700 text-lg leading-relaxed mb-8">
-            Cybersecurity is everyone&#39;s responsibility. Stay vigilant
-            against phishing scams, data breaches, and online threats. Awareness
-            and early action are your strongest defenses in today&#39;s
-            connected world.
-          </p>
-
-          <a
-            href="/Article"
-            className="inline-block bg-blue-700 hover:bg-blue-800 transition-all text-white text-lg px-8 py-3 rounded-lg shadow-md hover:shadow-lg"
-          >
-            Learn More →
-          </a>
+    <div>
+      {/* ⬇ SAME NAVBAR AS ARTICLE PAGE */}
+      <nav
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "1rem 2rem",
+          borderBottom: "1px solid #ddd",
+        }}
+      >
+        <div style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+          Cyber Saathi
         </div>
-      </section>
+
+        <div style={{ display: "flex", gap: "1.5rem" }}>
+          {navLinks.map(({ name, href }) => (
+            <Link
+              key={href}
+              href={href}
+              style={{
+                textDecoration: pathname === href ? "underline" : "none",
+                color: pathname === href ? "blue" : "black",
+                fontWeight: "500",
+              }}
+            >
+              {name}
+            </Link>
+          ))}
+        </div>
+      </nav>
+
+      {/* CONTENT */}
+      <div
+        style={{ margin: "3rem auto", maxWidth: "800px", padding: "0 1rem" }}
+      >
+        <h1
+          style={{
+            fontSize: "2rem",
+            fontWeight: "bold",
+            marginBottom: "1.5rem",
+          }}
+        >
+          Protect Your Digital Life
+        </h1>
+
+        <p
+          style={{
+            fontSize: "1.1rem",
+            lineHeight: "1.6",
+            marginBottom: "1.5rem",
+          }}
+        >
+          Cybersecurity is everyone&apos;s responsibility. Stay vigilant against
+          phishing scams, data breaches, and online threats. Awareness and early
+          action are your strongest defenses in today&apos;s connected world.
+        </p>
+
+        <a
+          href="/Article/article"
+          style={{
+            fontSize: "1.1rem",
+            color: "blue",
+            textDecoration: "underline",
+            cursor: "pointer",
+          }}
+        >
+          Learn More →
+        </a>
+      </div>
     </div>
   );
 }
