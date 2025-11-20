@@ -1,3 +1,8 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 export default function HomePage() {
   const pathname = usePathname();
 
@@ -12,7 +17,7 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* ⬇ SAME NAVBAR AS ARTICLE PAGE */}
+      {/* NAVBAR EXACTLY LIKE ARTICLE PAGE */}
       <nav
         style={{
           display: "flex",
@@ -43,9 +48,13 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* CONTENT */}
+      {/* HOME PAGE CONTENT */}
       <div
-        style={{ margin: "3rem auto", maxWidth: "800px", padding: "0 1rem" }}
+        style={{
+          margin: "3rem auto",
+          maxWidth: "800px",
+          padding: "0 1rem",
+        }}
       >
         <h1
           style={{
@@ -69,7 +78,7 @@ export default function HomePage() {
           action are your strongest defenses in today&apos;s connected world.
         </p>
 
-        <a
+        <Link
           href="/Article/article"
           style={{
             fontSize: "1.1rem",
@@ -79,7 +88,7 @@ export default function HomePage() {
           }}
         >
           Learn More →
-        </a>
+        </Link>
       </div>
     </div>
   );
