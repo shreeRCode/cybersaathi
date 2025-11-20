@@ -1,0 +1,125 @@
+/* PAGE BACKGROUND */
+.page {
+  background: #f6f9fc;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background-color: #0a2657;
+  color: white;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.active {
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+/* ACTIVE UNDERLINE */
+.underline {
+  width: 30px;
+  height: 3px;
+  background: white;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -6px;
+}
+
+/* MAIN CONTENT */
+.content {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: left;
+}
+
+.content h1 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0a2657;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.learn {
+  font-size: 18px;
+  color: #0a2657;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* CYBER FACTS SECTION */
+.facts-section {
+  background: white;
+  max-width: 900px;
+  margin: 40px auto 60px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.facts-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0a2657;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.facts-list {
+  list-style: none;
+  padding: 0;
+}
+
+.fact-item {
+  background: #eaf1ff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 17px;
+  color: #0a2657;
+  border-left: 5px solid #0a2657;
+}
