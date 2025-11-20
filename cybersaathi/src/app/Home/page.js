@@ -25,9 +25,10 @@ export default function HomePage() {
             </h1>
 
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
-              Cybersecurity is everyone's responsibility. Stay vigilant against
-              phishing scams, data breaches, and online threats. Learning and
-              awareness are your strongest defenses in today's connected world.
+              Cybersecurity is everyone&#39;s responsibility. Stay vigilant
+              against phishing scams, data breaches, and online threats.
+              Learning and awareness are your strongest defenses in today&#39;s
+              connected world.
             </p>
 
             <a
